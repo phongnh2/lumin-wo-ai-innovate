@@ -1,0 +1,26 @@
+[tools]
+python = "3.11"
+
+[env]
+HOST = "0.0.0.0"
+PORT = "8765"
+CHROMA_PATH = "./data/chroma_db"
+
+[tasks.setup]
+description = "Setup project environment"
+run = """
+mise exec -- python -m venv .venv
+.venv/bin/pip install -r requirements.txt
+"""
+
+[tasks.dev]
+description = "Run development server"
+run = ".venv/bin/python -m src.main"
+
+[tasks.docker]
+description = "Run with Docker"
+run = "docker-compose up --build"
+
+[tasks.clean]
+description = "Clean generated files"
+run = "rm -rf .venv __pycache__ data/chroma_db"

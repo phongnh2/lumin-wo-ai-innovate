@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  meilisearch:
+    image: getmeili/meilisearch:v1.6
+    ports:
+      - "7700:7700"
+    volumes:
+      - meilisearch_data:/meili_data
+    environment:
+      - MEILI_ENV=development
+    restart: unless-stopped
+
+  pdf-prompt-agent:
+    build: .
+    ports:
+      - "8765:8765"
+    volumes:
+      - ./data:/app/data
+      - ./sample-pdf:/app/sample-pdf
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8765
+      - CHROMA_PATH=/app/data/chroma_db
+      - MEILISEARCH_HOST=http://meilisearch:7700
+    depends_on:
+      - meilisearch
+    restart: unless-stopped
+
+volumes:
+  meilisearch_data:

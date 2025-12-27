@@ -1,0 +1,138 @@
+from fastapi import APIRouter, UploadFile, File, HTTPException
+from typing import List
+from src.services.pdf_processor import PDFProcessor
+from src.services.vector_store import VectorStore
+from src.services.prompt_generator import PromptGenerator
+from src.services.followup_generator import FollowUpGenerator
+from src.services.meilisearch_client import MeilisearchClient
+from src.models.schemas import (
+    IngestResponse, 
+    PromptResponse,
+    SearchRequest, 
+    SearchResponse,
+    EmbedderSetupResponse,
+    FollowUpRequest,
+    FollowUpResponse
+)
+
+router = APIRouter()
+pdf_processor = PDFProcessor()
+vector_store = VectorStore()
+prompt_generator = PromptGenerator()
+followup_generator = FollowUpGenerator()
+meilisearch_client = MeilisearchClient()
+
+
+@router.post("/ingest", response_model=IngestResponse)
+async def ingest_pdfs(files: List[UploadFile] = File(...)):
+    if not files:
+        raise HTTPException(status_code=400, detail="No files provided")
+    
+    for file in files:
+        if not file.filename.lower().endswith('.pdf'):
+            raise HTTPException(
+                status_code=400,
+                detail=f"File {file.filename} is not a PDF"
+            )
+    
+    total_chunks = 0
+    for file in files:
+        content = await file.read()
+        text = pdf_processor.extract_text(content)
+        chunks = pdf_processor.chunk_text(text, file.filename)
+        vector_store.add_documents(chunks)
+        total_chunks += len(chunks)
+    
+    return IngestResponse(
+        status="success",
+        documents_processed=len(files),
+        total_chunks=total_chunks
+    )
+
+
+@router.get("/prompts", response_model=PromptResponse)
+async def generate_prompts():
+    context = vector_store.get_context_summary()
+    
+    if not context:
+        raise HTTPException(
+            status_code=400,
+            detail="No documents ingested. Please upload PDFs first."
+        )
+    
+    result = prompt_generator.generate_templates(context)
+    
+    return PromptResponse(
+        prompt=result["prompt"],
+        placeholders=result["placeholders"],
+        context_summary=context[:500]
+    )
+
+
+@router.post("/prompts/follow-up", response_model=FollowUpResponse)
+async def generate_follow_up_prompts(request: FollowUpRequest):
+    if not request.prompt or not request.prompt.strip():
+        raise HTTPException(
+            status_code=400,
+            detail="Prompt cannot be empty"
+        )
+    
+    follow_up_queries = followup_generator.generate(request.prompt)
+    
+    return FollowUpResponse(
+        original_prompt=request.prompt,
+        follow_up_queries=follow_up_queries
+    )
+
+
+@router.post("/search", response_model=SearchResponse)
+async def search_forms(request: SearchRequest):
+    try:
+        results = meilisearch_client.search(
+            query=request.query,
+            use_hybrid=request.use_hybrid,
+            limit=request.limit,
+            filters=request.filters
+        )
+        return SearchResponse(**results)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.post("/search/semantic", response_model=SearchResponse)
+async def semantic_search_forms(request: SearchRequest):
+    try:
+        results = meilisearch_client.semantic_search(
+            query=request.query,
+            limit=request.limit,
+            filters=request.filters
+        )
+        return SearchResponse(
+            query=results["query"],
+            hits=results["hits"],
+            total_hits=results["total_hits"],
+            processing_time_ms=results["processing_time_ms"],
+            hybrid_enabled=True
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.post("/embedder/setup", response_model=EmbedderSetupResponse)
+async def setup_embedder():
+    try:
+        result = meilisearch_client.setup_embedder()
+        return EmbedderSetupResponse(**result)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/embedder/status")
+async def get_embedder_status():
+    try:
+        status = meilisearch_client.get_embedder_status()
+        return {"embedders": status, "configured": len(status) > 0}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

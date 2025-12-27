@@ -1,0 +1,1578 @@
+[
+  {
+    "segments": [
+      "I'm looking for official forms and templates related to ___.",
+      "These documents should be applicable to the ___ industry or sector.",
+      "Preferably used or recognized within the ___ region or jurisdiction."
+    ],
+    "placeholders": ["topic", "industry", "region"]
+  },
+  {
+    "segments": [
+      "Help me find professional documents that address ___ requirements.",
+      "The forms should fall under the ___ category or classification.",
+      "Ideally sourced from ___ or similar authoritative bodies."
+    ],
+    "placeholders": ["purpose", "category", "source"]
+  },
+  {
+    "segments": [
+      "I need comprehensive templates covering ___ policies and procedures.",
+      "These should be managed or reviewed by the ___ department.",
+      "Designed specifically for ___ compliance and operational needs."
+    ],
+    "placeholders": ["subject", "department", "purpose"]
+  },
+  {
+    "segments": [
+      "Search for standardized ___ forms and official documentation.",
+      "The target audience includes ___ organizations and stakeholders.",
+      "Must meet the regulatory requirements for ___ standards."
+    ],
+    "placeholders": ["type", "audience", "requirements"]
+  },
+  {
+    "segments": [
+      "I want to find documents that allow organizations to ___.",
+      "These are typically used for ___ operations and administration.",
+      "Valid and enforceable within the ___ legal framework."
+    ],
+    "placeholders": ["action", "business", "jurisdiction"]
+  },
+  {
+    "segments": [
+      "Show me forms commonly used for ___ processes and workflows.",
+      "Relevant to professionals working in the ___ field.",
+      "Covering essential aspects of ___ management and compliance."
+    ],
+    "placeholders": ["process", "sector", "compliance"]
+  },
+  {
+    "segments": [
+      "Find official templates that document ___ activities and records.",
+      "Applicable across ___ departments and organizational units.",
+      "Meeting the standards required for ___ reporting purposes."
+    ],
+    "placeholders": ["activity", "department", "reporting"]
+  },
+  {
+    "segments": [
+      "I'm searching for policy documents addressing ___ in the workplace.",
+      "Designed for implementation within ___ organizations.",
+      "Compliant with ___ regulations and best practices."
+    ],
+    "placeholders": ["issue", "organization type", "regulatory body"]
+  },
+  {
+    "segments": [
+      "I'm looking for agreement templates covering ___ terms and conditions.",
+      "These should be suitable for ___ partnerships or business relationships.",
+      "Applicable within the ___ jurisdiction or market."
+    ],
+    "placeholders": ["agreement type", "relationship type", "region"]
+  },
+  {
+    "segments": [
+      "Help me find standard contracts related to ___ services or deliverables.",
+      "Intended for use between ___ and ___ parties.",
+      "Following legal guidelines in the ___ country."
+    ],
+    "placeholders": ["service type", "party one", "country"]
+  },
+  {
+    "segments": [
+      "Show me templates for contractor agreements focused on ___.",
+      "Relevant to projects in the ___ industry.",
+      "Compliant with labor laws in the ___ region."
+    ],
+    "placeholders": ["scope", "industry", "region"]
+  },
+  {
+    "segments": [
+      "Find forms used in the ___ department for onboarding new employees.",
+      "These should document details related to ___.",
+      "Valid for organizations operating in the ___ sector."
+    ],
+    "placeholders": ["department", "employment type", "sector"]
+  },
+  {
+    "segments": [
+      "I need medical forms that help record ___ details during patient visits.",
+      "Commonly used by ___ clinics or healthcare providers.",
+      "Following the standards set by the ___ authority."
+    ],
+    "placeholders": ["medical detail", "clinic type", "authority"]
+  },
+  {
+    "segments": [
+      "Search for templates that document ___ procedures in hospitals.",
+      "Used by ___ departments for compliance purposes.",
+      "Recognized across healthcare systems in ___."
+    ],
+    "placeholders": ["procedure", "department", "country"]
+  },
+  {
+    "segments": [
+      "Show me classroom templates that assist teachers in tracking ___.",
+      "Designed for use in ___ educational levels.",
+      "Aligned with academic standards of ___."
+    ],
+    "placeholders": ["activity", "education level", "region"]
+  },
+  {
+    "segments": [
+      "Find education-related documents covering ___ curriculum or syllabus.",
+      "Targeted for ___ institutions or training centers.",
+      "Meeting the guidelines established by ___."
+    ],
+    "placeholders": ["subject", "institution type", "authority"]
+  },
+  {
+    "segments": [
+      "I'm searching for templates related to job applications for ___.",
+      "These should be tailored to ___ roles or industries.",
+      "Useful across organizations operating in ___."
+    ],
+    "placeholders": ["position type", "role type", "region"]
+  },
+  {
+    "segments": [
+      "Help me find HR policy documents that govern ___ practices.",
+      "Specifically created for ___ departments or organizations.",
+      "Compliant with employment laws in ___."
+    ],
+    "placeholders": ["policy type", "department", "region"]
+  },
+  {
+    "segments": [
+      "I want to locate finance-related forms for ___ transactions.",
+      "Used by ___ companies for accounting or audit purposes.",
+      "Following standards set by the ___ board."
+    ],
+    "placeholders": ["transaction type", "company type", "authority"]
+  },
+  {
+    "segments": [
+      "Find templates for procurement documents focusing on ___.",
+      "Used by ___ teams in supply chain operations.",
+      "Valid under the procurement rules of ___."
+    ],
+    "placeholders": ["category", "team type", "country"]
+  },
+  {
+    "segments": [
+      "Show me beauty service consent forms related to ___.",
+      "Designed for use in ___ salons or clinics.",
+      "Ensuring safety compliance with ___ standards."
+    ],
+    "placeholders": ["treatment", "business type", "authority"]
+  },
+  {
+    "segments": [
+      "Search for health insurance claim forms covering ___.",
+      "Typically used by ___ providers or agencies.",
+      "Accepted in the ___ healthcare system."
+    ],
+    "placeholders": ["claim type", "provider type", "region"]
+  },
+  {
+    "segments": [
+      "Find template agreements for freelance work in ___.",
+      "Commonly used between clients and ___ contractors.",
+      "Compliant with the business laws of ___."
+    ],
+    "placeholders": ["industry", "contractor type", "country"]
+  },
+  {
+    "segments": [
+      "I need templates that record performance evaluations for ___.",
+      "Designed for use by ___ managers or departments.",
+      "Following HR policies approved by ___."
+    ],
+    "placeholders": ["employee level", "manager type", "organization"]
+  },
+  {
+    "segments": [
+      "Show me standard NDAs related to ___ information protection.",
+      "Used during collaborations between ___ parties.",
+      "Recognized under ___ confidentiality laws."
+    ],
+    "placeholders": ["data type", "party type", "jurisdiction"]
+  },
+  {
+    "segments": [
+      "Find templates for partnership agreements covering ___.",
+      "Intended for use by ___ companies.",
+      "Valid under ___ trade or corporate law."
+    ],
+    "placeholders": ["business scope", "company type", "region"]
+  },
+  {
+    "segments": [
+      "I’m looking for invoice templates used in ___ services.",
+      "Suitable for ___ professionals or firms.",
+      "Conforming to tax rules in ___."
+    ],
+    "placeholders": ["service type", "profession", "region"]
+  },
+  {
+    "segments": [
+      "Search for quality assurance forms that document ___ processes.",
+      "Applied within ___ manufacturing or service industries.",
+      "Meeting the compliance standards of ___."
+    ],
+    "placeholders": ["process", "industry", "authority"]
+  },
+  {
+    "segments": [
+      "Help me find templates for meeting minutes in ___ projects.",
+      "These should record decisions made by ___ teams.",
+      "Formatted according to the standards of ___."
+    ],
+    "placeholders": ["project type", "team type", "organization"]
+  },
+  {
+    "segments": [
+      "Find audit report templates focused on ___ operations.",
+      "Used by internal teams in ___ companies.",
+      "Following audit frameworks required by ___."
+    ],
+    "placeholders": ["operation type", "company size", "authority"]
+  },
+  {
+    "segments": [
+      "Show me construction contract templates for ___ projects.",
+      "Applicable for contractors and ___ developers.",
+      "Aligned with construction codes in ___."
+    ],
+    "placeholders": ["project type", "developer type", "region"]
+  },
+  {
+    "segments": [
+      "I need documentation templates for ___ compliance reports.",
+      "Used by ___ departments within large enterprises.",
+      "Reviewed under standards of ___."
+    ],
+    "placeholders": ["compliance type", "department", "organization"]
+  },
+  {
+    "segments": [
+      "Find marketing plan templates designed for ___ campaigns.",
+      "Useful for teams in the ___ sector.",
+      "Structured to meet objectives of ___."
+    ],
+    "placeholders": ["campaign type", "industry", "goal"]
+  },
+  {
+    "segments": [
+      "Show me legal notice templates related to ___ issues.",
+      "Typically sent by ___ firms or individuals.",
+      "Valid under the laws of ___."
+    ],
+    "placeholders": ["issue type", "sender type", "jurisdiction"]
+  },
+  {
+    "segments": [
+      "Help me locate forms for patient consent regarding ___.",
+      "Used in ___ clinics or research centers.",
+      "Approved under ___ ethical standards."
+    ],
+    "placeholders": ["treatment", "clinic type", "authority"]
+  },
+  {
+    "segments": [
+      "Search for templates that help track student attendance in ___.",
+      "Used by teachers in ___ schools.",
+      "Compliant with education policies in ___."
+    ],
+    "placeholders": ["subject area", "school type", "region"]
+  },
+  {
+    "segments": [
+      "I need lease agreement templates for ___ property rentals.",
+      "Used by ___ agencies or landlords.",
+      "Compliant with real estate laws in ___."
+    ],
+    "placeholders": ["property type", "organization type", "region"]
+  },
+  {
+    "segments": [
+      "Find budget planning templates for ___ projects.",
+      "Commonly used by ___ teams or managers.",
+      "Following accounting standards set by ___."
+    ],
+    "placeholders": ["project type", "team type", "authority"]
+  },
+  {
+    "segments": [
+      "Show me academic report templates for ___ research projects.",
+      "Used by students or ___ institutions.",
+      "Following the citation format of ___."
+    ],
+    "placeholders": ["research topic", "institution type", "style guide"]
+  },
+  {
+    "segments": [
+      "Locate project proposal templates related to ___.",
+      "Prepared for ___ clients or stakeholders.",
+      "Following documentation requirements in ___."
+    ],
+    "placeholders": ["project type", "client type", "region"]
+  },
+  {
+    "segments": [
+      "Help me find safety inspection forms for ___ workplaces.",
+      "Used by ___ officers or departments.",
+      "Aligned with safety laws in ___."
+    ],
+    "placeholders": ["workplace type", "role", "country"]
+  },
+  {
+    "segments": [
+      "Search for payroll forms related to ___ employee records.",
+      "Used by HR or ___ departments.",
+      "Compliant with tax codes in ___."
+    ],
+    "placeholders": ["record type", "finance department", "region"]
+  },
+  {
+    "segments": [
+      "Show me expense reimbursement forms for ___ activities.",
+      "Used by employees in ___ organizations.",
+      "Following the reimbursement rules of ___."
+    ],
+    "placeholders": ["expense type", "organization type", "authority"]
+  },
+  {
+    "segments": [
+      "Find templates for training certificates in ___ courses.",
+      "Issued by ___ institutions or companies.",
+      "Recognized by ___ accreditation bodies."
+    ],
+    "placeholders": ["course type", "provider type", "authority"]
+  },
+  {
+    "segments": [
+      "Help me locate daily operation logs for ___ facilities.",
+      "Maintained by ___ staff or supervisors.",
+      "Used for compliance tracking in ___."
+    ],
+    "placeholders": ["facility type", "staff type", "industry"]
+  },
+  {
+    "segments": [
+      "Search for marketing consent forms related to ___.",
+      "Required by ___ organizations for data collection.",
+      "In accordance with ___ privacy laws."
+    ],
+    "placeholders": ["data type", "organization type", "law name"]
+  },
+  {
+    "segments": [
+      "Find maintenance checklist templates for ___ equipment.",
+      "Used by ___ technicians or engineers.",
+      "Following manufacturer guidelines of ___."
+    ],
+    "placeholders": ["equipment type", "role", "brand"]
+  },
+  {
+    "segments": [
+      "Show me tax declaration forms related to ___ income types.",
+      "Filed by ___ entities or individuals.",
+      "According to regulations of ___."
+    ],
+    "placeholders": ["income type", "entity type", "country"]
+  },
+  {
+    "segments": [
+      "Locate service request forms for ___ departments.",
+      "Used internally by ___ teams.",
+      "Processed according to ___ policies."
+    ],
+    "placeholders": ["request type", "department type", "organization"]
+  },
+  {
+    "segments": [
+      "Find employee feedback forms that measure ___ satisfaction.",
+      "Distributed to ___ staff groups.",
+      "Analyzed under HR metrics of ___."
+    ],
+    "placeholders": ["area", "staff type", "organization"]
+  },
+  {
+    "segments": [
+      "Show me templates for procurement bids related to ___.",
+      "Used by ___ suppliers or vendors.",
+      "Following tender rules in ___."
+    ],
+    "placeholders": ["product type", "vendor type", "region"]
+  },
+  {
+    "segments": [
+      "Search for travel authorization forms required for ___ trips.",
+      "Submitted by ___ employees or departments.",
+      "Approved under policies of ___."
+    ],
+    "placeholders": ["trip type", "employee group", "organization"]
+  },
+  {
+    "segments": [
+      "Find maintenance report templates documenting ___ repairs.",
+      "Filed by ___ service teams.",
+      "Compliant with operational guidelines of ___."
+    ],
+    "placeholders": ["repair type", "team type", "organization"]
+  },
+  {
+    "segments": [
+      "Locate customer feedback templates about ___ services.",
+      "Used by ___ departments to gather insights.",
+      "Structured to align with ___ satisfaction standards."
+    ],
+    "placeholders": ["service type", "department", "authority"]
+  },
+  {
+    "segments": [
+      "Search for beauty salon intake forms covering ___ treatments.",
+      "Designed for ___ clients or age groups.",
+      "Compliant with hygiene rules of ___."
+    ],
+    "placeholders": ["treatment type", "client type", "region"]
+  },
+  {
+    "segments": [
+      "Help me find templates for school permission slips about ___.",
+      "Given to ___ students or parents.",
+      "Following the educational policy of ___."
+    ],
+    "placeholders": ["activity", "student group", "authority"]
+  },
+  {
+    "segments": [
+      "Find wellness program templates encouraging ___.",
+      "Used by ___ organizations or trainers.",
+      "Following health standards defined by ___."
+    ],
+    "placeholders": ["wellness activity", "organization type", "authority"]
+  },
+  {
+    "segments": [
+      "Show me certification request forms for ___ professionals.",
+      "Processed by ___ boards or associations.",
+      "Recognized in the ___ region."
+    ],
+    "placeholders": ["profession", "certification body", "region"]
+  },
+  {
+    "segments": [
+      "Find standard templates for drafting ___ business proposals.",
+      "Useful for teams preparing pitches in the ___ industry.",
+      "Following the presentation guidelines of ___."
+    ],
+    "placeholders": ["proposal type", "industry", "organization"]
+  },
+  {
+    "segments": [
+      "Search for official registration forms for ___ organizations.",
+      "Designed to capture data about ___ activities.",
+      "Compliant with the registration requirements of ___."
+    ],
+    "placeholders": ["organization type", "activity type", "region"]
+  },
+  {
+    "segments": [
+      "Show me report templates used to summarize ___ performance.",
+      "Created by ___ departments within corporations.",
+      "Aligned with performance metrics defined by ___."
+    ],
+    "placeholders": ["area", "department", "authority"]
+  },
+  {
+    "segments": [
+      "Locate customer onboarding forms for ___ services.",
+      "Used by ___ teams to record client details.",
+      "Following company standards for ___."
+    ],
+    "placeholders": ["service type", "team type", "process"]
+  },
+  {
+    "segments": [
+      "Find documentation templates describing ___ project requirements.",
+      "Used by ___ teams during planning phases.",
+      "Reviewed under project management frameworks such as ___."
+    ],
+    "placeholders": ["requirement type", "project team", "framework"]
+  },
+  {
+    "segments": [
+      "Search for warranty claim forms covering ___ products.",
+      "Provided by ___ manufacturers or distributors.",
+      "Accepted under warranty policies of ___."
+    ],
+    "placeholders": ["product type", "company type", "policy name"]
+  },
+  {
+    "segments": [
+      "Show me IT policy templates outlining ___ access controls.",
+      "Intended for use in ___ organizations.",
+      "Compliant with cybersecurity standards such as ___."
+    ],
+    "placeholders": ["policy focus", "organization type", "standard"]
+  },
+  {
+    "segments": [
+      "Find consent forms for data collection in ___ programs.",
+      "Distributed by ___ institutions or firms.",
+      "In accordance with privacy regulations like ___."
+    ],
+    "placeholders": ["program type", "organization type", "regulation"]
+  },
+  {
+    "segments": [
+      "Locate maintenance schedules for ___ equipment.",
+      "Prepared by ___ engineers or technicians.",
+      "Meeting operational standards defined by ___."
+    ],
+    "placeholders": ["equipment type", "role type", "authority"]
+  },
+  {
+    "segments": [
+      "Search for policy templates addressing ___ workplace behavior.",
+      "Intended for employees in ___ companies.",
+      "Based on HR standards recognized by ___."
+    ],
+    "placeholders": ["behavior type", "company size", "authority"]
+  },
+  {
+    "segments": [
+      "Show me annual review templates for evaluating ___ goals.",
+      "Used by ___ managers and supervisors.",
+      "Structured according to HR frameworks of ___."
+    ],
+    "placeholders": ["goal type", "manager level", "organization"]
+  },
+  {
+    "segments": [
+      "Find invoice reconciliation templates for ___ transactions.",
+      "Used by ___ finance teams.",
+      "Following accounting principles issued by ___."
+    ],
+    "placeholders": ["transaction type", "department type", "authority"]
+  },
+  {
+    "segments": [
+      "Locate templates for RFP documents about ___ solutions.",
+      "Prepared by ___ organizations for suppliers.",
+      "Compliant with tender procedures in ___."
+    ],
+    "placeholders": ["solution type", "organization type", "region"]
+  },
+  {
+    "segments": [
+      "Search for performance tracking sheets in ___ departments.",
+      "Used by ___ managers to record metrics.",
+      "Following internal evaluation criteria of ___."
+    ],
+    "placeholders": ["department type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Find reimbursement claim templates for ___ expenses.",
+      "Submitted by ___ employees or contractors.",
+      "Reviewed under financial rules of ___."
+    ],
+    "placeholders": ["expense type", "employee type", "authority"]
+  },
+  {
+    "segments": [
+      "Locate change request forms for modifying ___ systems.",
+      "Filed by ___ users or administrators.",
+      "Approved according to IT governance of ___."
+    ],
+    "placeholders": ["system type", "user role", "organization"]
+  },
+  {
+    "segments": [
+      "Search for meeting agenda templates related to ___.",
+      "Created by ___ coordinators or secretaries.",
+      "Formatted following company documentation standards."
+    ],
+    "placeholders": ["topic", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Show me application forms for professional certification in ___.",
+      "Issued by ___ associations or institutes.",
+      "Meeting eligibility criteria set by ___."
+    ],
+    "placeholders": ["field", "association type", "authority"]
+  },
+  {
+    "segments": [
+      "Find compliance audit checklists for ___ processes.",
+      "Used by auditors in ___ sectors.",
+      "Following the compliance standards of ___."
+    ],
+    "placeholders": ["process type", "industry", "standard"]
+  },
+  {
+    "segments": [
+      "Locate internal communication templates for announcing ___.",
+      "Distributed by ___ departments.",
+      "Following internal messaging guidelines of ___."
+    ],
+    "placeholders": ["announcement type", "department", "organization"]
+  },
+  {
+    "segments": [
+      "Search for progress report templates in ___ construction projects.",
+      "Used by ___ contractors or site managers.",
+      "Complying with safety and quality standards in ___."
+    ],
+    "placeholders": ["project type", "role type", "region"]
+  },
+  {
+    "segments": [
+      "Find job offer letter templates for ___ positions.",
+      "Issued by ___ HR teams or recruiters.",
+      "Following hiring protocols approved by ___."
+    ],
+    "placeholders": ["position type", "team type", "organization"]
+  },
+  {
+    "segments": [
+      "Locate confidentiality agreement templates for ___ projects.",
+      "Used between ___ and subcontractors.",
+      "Recognized under privacy laws of ___."
+    ],
+    "placeholders": ["project type", "party type", "jurisdiction"]
+  },
+  {
+    "segments": [
+      "Search for financial statement templates summarizing ___.",
+      "Used by ___ organizations during audits.",
+      "Formatted under accounting standards such as ___."
+    ],
+    "placeholders": ["financial data", "organization type", "framework"]
+  },
+  {
+    "segments": [
+      "Find IT request forms related to ___ system changes.",
+      "Used by ___ departments for workflow management.",
+      "Compliant with internal IT policies of ___."
+    ],
+    "placeholders": ["request type", "department", "organization"]
+  },
+  {
+    "segments": [
+      "Locate supplier evaluation templates for ___ procurement processes.",
+      "Completed by ___ procurement officers.",
+      "Following supplier selection criteria of ___."
+    ],
+    "placeholders": ["category", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Show me maintenance record sheets for ___ machinery.",
+      "Prepared by ___ engineers or operators.",
+      "Meeting maintenance documentation rules of ___."
+    ],
+    "placeholders": ["machinery type", "staff role", "authority"]
+  },
+  {
+    "segments": [
+      "Find templates for academic grading rubrics in ___.",
+      "Used by ___ teachers or professors.",
+      "Following the evaluation system defined by ___."
+    ],
+    "placeholders": ["subject", "education level", "institution"]
+  },
+  {
+    "segments": [
+      "Locate health declaration forms for ___ facilities.",
+      "Required by ___ organizations.",
+      "Compliant with health regulations of ___."
+    ],
+    "placeholders": ["facility type", "organization type", "region"]
+  },
+  {
+    "segments": [
+      "Search for project handover templates documenting ___.",
+      "Used by ___ project teams or managers.",
+      "Following completion procedures in ___."
+    ],
+    "placeholders": ["handover type", "team type", "organization"]
+  },
+  {
+    "segments": [
+      "Find feedback collection templates for ___ programs.",
+      "Distributed to ___ participants or customers.",
+      "Summarized according to evaluation criteria of ___."
+    ],
+    "placeholders": ["program type", "audience type", "organization"]
+  },
+  {
+    "segments": [
+      "Show me inventory tracking templates for ___ warehouses.",
+      "Used by ___ staff or managers.",
+      "Complying with logistics standards of ___."
+    ],
+    "placeholders": ["inventory type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Locate time tracking sheets for ___ employees.",
+      "Maintained by ___ departments.",
+      "Aligned with labor regulations in ___."
+    ],
+    "placeholders": ["employee type", "department", "region"]
+  },
+  {
+    "segments": [
+      "Find cybersecurity incident report templates describing ___.",
+      "Used by ___ security teams.",
+      "Following protocols set by ___."
+    ],
+    "placeholders": ["incident type", "team type", "authority"]
+  },
+  {
+    "segments": [
+      "Locate research grant application templates for ___.",
+      "Submitted by ___ researchers or faculty.",
+      "Evaluated under funding policies of ___."
+    ],
+    "placeholders": ["research field", "applicant type", "institution"]
+  },
+  {
+    "segments": [
+      "Find consent forms for photography and media in ___.",
+      "Issued by ___ organizations or studios.",
+      "Meeting privacy standards under ___."
+    ],
+    "placeholders": ["event type", "organization type", "law name"]
+  },
+  {
+    "segments": [
+      "Show me templates for annual training plans covering ___.",
+      "Designed by ___ learning departments.",
+      "Aligned with corporate development goals of ___."
+    ],
+    "placeholders": ["training topic", "department", "organization"]
+  },
+  {
+    "segments": [
+      "Locate meeting summary templates for ___ committees.",
+      "Prepared by ___ secretaries or assistants.",
+      "Formatted according to company meeting standards."
+    ],
+    "placeholders": ["committee type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Search for business continuity plans addressing ___ disruptions.",
+      "Developed by ___ risk management teams.",
+      "Compliant with continuity standards of ___."
+    ],
+    "placeholders": ["disruption type", "team type", "standard"]
+  },
+  {
+    "segments": [
+      "Find templates for internal audits related to ___ policies.",
+      "Executed by ___ audit teams.",
+      "Following compliance rules of ___."
+    ],
+    "placeholders": ["policy type", "team type", "organization"]
+  },
+  {
+    "segments": [
+      "Locate shipping documentation templates for ___ exports.",
+      "Used by ___ logistics companies.",
+      "In accordance with customs regulations of ___."
+    ],
+    "placeholders": ["product type", "company type", "country"]
+  },
+  {
+    "segments": [
+      "Show me service agreement templates for ___ partnerships.",
+      "Signed between ___ providers and clients.",
+      "Recognized under trade laws in ___."
+    ],
+    "placeholders": ["service type", "party type", "region"]
+  },
+  {
+    "segments": [
+      "Find construction safety checklist templates for ___ sites.",
+      "Used by ___ supervisors or engineers.",
+      "Meeting occupational safety standards of ___."
+    ],
+    "placeholders": ["site type", "role type", "authority"]
+  },
+  {
+    "segments": [
+      "Locate IT asset tracking forms for ___ hardware.",
+      "Maintained by ___ administrators.",
+      "Compliant with asset management rules in ___."
+    ],
+    "placeholders": ["hardware type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Search for supplier onboarding templates including ___.",
+      "Completed by ___ vendors or distributors.",
+      "Following procurement onboarding rules of ___."
+    ],
+    "placeholders": ["data type", "vendor type", "organization"]
+  },
+  {
+    "segments": [
+      "Find templates for employee termination documentation about ___.",
+      "Used by ___ HR departments.",
+      "Following labor laws in ___."
+    ],
+    "placeholders": ["termination reason", "department", "country"]
+  },
+  {
+    "segments": [
+      "Locate cost estimation templates for ___ projects.",
+      "Prepared by ___ planning teams.",
+      "Structured under budgeting standards of ___."
+    ],
+    "placeholders": ["project type", "team type", "organization"]
+  },
+  {
+    "segments": [
+      "Show me volunteer agreement templates for ___ activities.",
+      "Used by ___ nonprofits or community groups.",
+      "Compliant with volunteer service regulations in ___."
+    ],
+    "placeholders": ["activity type", "organization type", "region"]
+  },
+  {
+    "segments": [
+      "Find forms to document environmental impact of ___.",
+      "Filed by ___ organizations or consultants.",
+      "Meeting sustainability guidelines of ___."
+    ],
+    "placeholders": ["activity", "organization type", "authority"]
+  },
+  {
+    "segments": [
+      "Locate expense tracking templates for ___ departments.",
+      "Maintained by ___ finance teams.",
+      "Following internal budgeting standards of ___."
+    ],
+    "placeholders": ["department type", "team type", "organization"]
+  },
+  {
+    "segments": [
+      "Search for risk assessment templates evaluating ___ hazards.",
+      "Used by ___ compliance teams.",
+      "Based on safety frameworks set by ___."
+    ],
+    "placeholders": ["hazard type", "team type", "framework"]
+  },
+  {
+    "segments": [
+      "Find compliance declaration templates for ___ industries.",
+      "Used by ___ departments to certify operations.",
+      "Compliant with the national standards of ___."
+    ],
+    "placeholders": ["industry", "department", "country"]
+  },
+  {
+    "segments": [
+      "Locate emergency response forms for ___ facilities.",
+      "Completed by ___ personnel or teams.",
+      "Following safety response protocols of ___."
+    ],
+    "placeholders": ["facility type", "role type", "authority"]
+  },
+  {
+    "segments": [
+      "Show me client onboarding documents for ___ financial services.",
+      "Used by ___ advisors or firms.",
+      "In accordance with compliance laws of ___."
+    ],
+    "placeholders": ["service type", "advisor type", "region"]
+  },
+  {
+    "segments": [
+      "Search for medical report templates documenting ___ conditions.",
+      "Prepared by ___ specialists or clinicians.",
+      "Following healthcare regulations of ___."
+    ],
+    "placeholders": ["condition", "specialist type", "region"]
+  },
+  {
+    "segments": [
+      "Find facility inspection checklists for ___ sites.",
+      "Used by ___ inspectors or auditors.",
+      "Meeting health and safety standards of ___."
+    ],
+    "placeholders": ["site type", "inspector role", "authority"]
+  },
+  {
+    "segments": [
+      "Locate consent forms for research participants in ___.",
+      "Created by ___ research institutes.",
+      "Approved by ethical boards of ___."
+    ],
+    "placeholders": ["research field", "institution", "authority"]
+  },
+  {
+    "segments": [
+      "Show me accounting templates to record ___ expenses.",
+      "Used by ___ organizations for audits.",
+      "Following accounting standards under ___."
+    ],
+    "placeholders": ["expense type", "organization", "framework"]
+  },
+  {
+    "segments": [
+      "Search for templates to document ___ maintenance logs.",
+      "Maintained by ___ operators or technicians.",
+      "Required by regulatory authorities in ___."
+    ],
+    "placeholders": ["machine type", "role type", "region"]
+  },
+  {
+    "segments": [
+      "Find policy drafts for managing ___ incidents.",
+      "Developed by ___ security or operations teams.",
+      "Aligned with incident management guidelines of ___."
+    ],
+    "placeholders": ["incident type", "team type", "authority"]
+  },
+  {
+    "segments": [
+      "Locate HR forms for documenting ___ leave requests.",
+      "Used by ___ employees or departments.",
+      "Following leave management rules of ___."
+    ],
+    "placeholders": ["leave type", "employee type", "organization"]
+  },
+  {
+    "segments": [
+      "Show me cybersecurity policy templates covering ___ risks.",
+      "Implemented by ___ IT departments.",
+      "Following data protection standards like ___."
+    ],
+    "placeholders": ["risk type", "department", "framework"]
+  },
+  {
+    "segments": [
+      "Search for templates for event planning related to ___.",
+      "Used by ___ coordinators or agencies.",
+      "Based on event management practices in ___."
+    ],
+    "placeholders": ["event type", "planner type", "region"]
+  },
+  {
+    "segments": [
+      "Find meeting attendance templates for ___ conferences.",
+      "Prepared by ___ organizations or committees.",
+      "Conforming to documentation standards of ___."
+    ],
+    "placeholders": ["conference type", "organization", "authority"]
+  },
+  {
+    "segments": [
+      "Locate intellectual property agreement templates for ___ inventions.",
+      "Used by ___ companies or creators.",
+      "Recognized under patent laws of ___."
+    ],
+    "placeholders": ["invention type", "party type", "jurisdiction"]
+  },
+  {
+    "segments": [
+      "Show me nondisclosure templates for ___ collaborations.",
+      "Used between ___ entities.",
+      "Compliant with trade secret protection rules in ___."
+    ],
+    "placeholders": ["collaboration type", "entity type", "region"]
+  },
+  {
+    "segments": [
+      "Find supplier contract templates for ___ materials.",
+      "Prepared by ___ procurement teams.",
+      "Following supplier compliance rules in ___."
+    ],
+    "placeholders": ["material type", "team type", "country"]
+  },
+  {
+    "segments": [
+      "Locate internal memo templates regarding ___ updates.",
+      "Circulated by ___ departments or executives.",
+      "Following internal communication protocols of ___."
+    ],
+    "placeholders": ["update type", "department", "organization"]
+  },
+  {
+    "segments": [
+      "Search for shift schedule templates for ___ workers.",
+      "Used by ___ supervisors or HR managers.",
+      "Complying with labor standards of ___."
+    ],
+    "placeholders": ["worker type", "manager role", "region"]
+  },
+  {
+    "segments": [
+      "Find training attendance forms for ___ programs.",
+      "Filled out by ___ trainers or participants.",
+      "Archived according to documentation policies of ___."
+    ],
+    "placeholders": ["program type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Locate procurement checklist templates for ___ projects.",
+      "Used by ___ buyers or contractors.",
+      "Based on procurement guidelines of ___."
+    ],
+    "placeholders": ["project type", "role type", "authority"]
+  },
+  {
+    "segments": [
+      "Show me disaster recovery plan templates covering ___.",
+      "Created by ___ IT or risk teams.",
+      "Aligned with recovery frameworks such as ___."
+    ],
+    "placeholders": ["disaster type", "team type", "framework"]
+  },
+  {
+    "segments": [
+      "Find templates for environmental reports on ___ activities.",
+      "Prepared by ___ environmental teams.",
+      "Meeting sustainability goals defined by ___."
+    ],
+    "placeholders": ["activity type", "team type", "organization"]
+  },
+  {
+    "segments": [
+      "Locate performance appraisal forms for ___ employees.",
+      "Used by ___ managers for evaluations.",
+      "Aligned with HR performance frameworks."
+    ],
+    "placeholders": ["employee type", "manager type", "organization"]
+  },
+  {
+    "segments": [
+      "Search for financial reconciliation sheets for ___ accounts.",
+      "Used by ___ accountants.",
+      "Following accounting procedures set by ___."
+    ],
+    "placeholders": ["account type", "role type", "authority"]
+  },
+  {
+    "segments": [
+      "Find templates to record safety drills for ___ facilities.",
+      "Maintained by ___ safety officers.",
+      "Required by occupational safety regulations."
+    ],
+    "placeholders": ["facility type", "officer type", "authority"]
+  },
+  {
+    "segments": [
+      "Locate marketing brief templates for ___ campaigns.",
+      "Developed by ___ marketing teams.",
+      "Following brand communication rules of ___."
+    ],
+    "placeholders": ["campaign type", "team type", "organization"]
+  },
+  {
+    "segments": [
+      "Show me code review checklist templates for ___ projects.",
+      "Used by ___ software engineers.",
+      "Following engineering practices established by ___."
+    ],
+    "placeholders": ["project type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Search for software license agreement templates for ___.",
+      "Used by ___ vendors and users.",
+      "Compliant with software distribution laws in ___."
+    ],
+    "placeholders": ["software type", "party type", "region"]
+  },
+  {
+    "segments": [
+      "Find templates for risk logs related to ___ operations.",
+      "Maintained by ___ compliance officers.",
+      "Evaluated according to risk frameworks under ___."
+    ],
+    "placeholders": ["operation type", "officer type", "authority"]
+  },
+  {
+    "segments": [
+      "Locate budget proposal forms for ___ initiatives.",
+      "Prepared by ___ departments.",
+      "Approved according to budgeting rules of ___."
+    ],
+    "placeholders": ["initiative type", "department", "organization"]
+  },
+  {
+    "segments": [
+      "Show me quality audit forms for ___ manufacturing units.",
+      "Used by ___ inspectors.",
+      "Meeting ISO or quality control standards of ___."
+    ],
+    "placeholders": ["unit type", "inspector role", "standard"]
+  },
+  {
+    "segments": [
+      "Find templates for workshop feedback in ___ courses.",
+      "Distributed by ___ instructors.",
+      "Summarized according to evaluation systems."
+    ],
+    "placeholders": ["course type", "instructor type", "organization"]
+  },
+  {
+    "segments": [
+      "Locate property valuation templates for ___ estates.",
+      "Used by ___ appraisers.",
+      "Following real estate valuation standards of ___."
+    ],
+    "placeholders": ["property type", "role type", "authority"]
+  },
+  {
+    "segments": [
+      "Search for export documentation templates for ___ goods.",
+      "Used by ___ shipping companies.",
+      "Complying with international trade laws."
+    ],
+    "placeholders": ["goods type", "company type", "law name"]
+  },
+  {
+    "segments": [
+      "Find marketing consent forms regarding ___ data usage.",
+      "Required by ___ advertising agencies.",
+      "Under privacy regulations of ___."
+    ],
+    "placeholders": ["data type", "agency type", "region"]
+  },
+  {
+    "segments": [
+      "Locate timesheet templates for tracking ___ hours.",
+      "Used by ___ freelancers or teams.",
+      "Following reporting requirements under ___."
+    ],
+    "placeholders": ["work type", "worker type", "framework"]
+  },
+  {
+    "segments": [
+      "Show me templates for project evaluation summaries in ___.",
+      "Prepared by ___ project coordinators.",
+      "Following the project completion standards of ___."
+    ],
+    "placeholders": ["project type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Find inventory audit forms for ___ warehouses.",
+      "Used by ___ auditors or managers.",
+      "Complying with inventory control regulations."
+    ],
+    "placeholders": ["warehouse type", "role type", "authority"]
+  },
+  {
+    "segments": [
+      "Locate recruitment tracker templates for ___ roles.",
+      "Used by ___ HR recruiters.",
+      "Based on hiring process standards of ___."
+    ],
+    "placeholders": ["job type", "recruiter type", "organization"]
+  },
+  {
+    "segments": [
+      "Search for course evaluation templates for ___ programs.",
+      "Filled by ___ students or attendees.",
+      "Reviewed according to academic policies of ___."
+    ],
+    "placeholders": ["program type", "participant type", "institution"]
+  },
+  {
+    "segments": [
+      "Find insurance claim templates related to ___ incidents.",
+      "Used by ___ policyholders.",
+      "Processed under insurance rules of ___."
+    ],
+    "placeholders": ["incident type", "holder type", "region"]
+  },
+  {
+    "segments": [
+      "Locate software development plan templates for ___ systems.",
+      "Created by ___ teams or agencies.",
+      "Following project management methodologies such as ___."
+    ],
+    "placeholders": ["system type", "team type", "methodology"]
+  },
+  {
+    "segments": [
+      "Show me client satisfaction survey templates for ___ services.",
+      "Distributed by ___ customer success teams.",
+      "Analyzed according to survey standards."
+    ],
+    "placeholders": ["service type", "team type", "organization"]
+  },
+  {
+    "segments": [
+      "Find employee wellness program templates promoting ___.",
+      "Implemented by ___ HR teams.",
+      "Aligned with health guidelines under ___."
+    ],
+    "placeholders": ["activity type", "team type", "authority"]
+  },
+  {
+    "segments": [
+      "Locate conference registration forms for ___ events.",
+      "Used by ___ organizers.",
+      "Following event management policies."
+    ],
+    "placeholders": ["event type", "organizer type", "organization"]
+  },
+  {
+    "segments": [
+      "Search for supplier compliance templates tracking ___ metrics.",
+      "Maintained by ___ compliance departments.",
+      "According to quality assurance policies of ___."
+    ],
+    "placeholders": ["metric type", "department", "organization"]
+  },
+  {
+    "segments": [
+      "Find templates for contract renewal in ___ services.",
+      "Used by ___ account managers.",
+      "Complying with renewal procedures under ___."
+    ],
+    "placeholders": ["service type", "role type", "authority"]
+  },
+  {
+    "segments": [
+      "Locate expense summary templates for ___ divisions.",
+      "Prepared by ___ financial officers.",
+      "Following budgeting guidelines of ___."
+    ],
+    "placeholders": ["division type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Show me communication plan templates for ___ projects.",
+      "Created by ___ project managers.",
+      "Aligned with communication frameworks under ___."
+    ],
+    "placeholders": ["project type", "role type", "framework"]
+  },
+  {
+    "segments": [
+      "Find templates for event feedback collection in ___.",
+      "Used by ___ organizers.",
+      "Following event reporting standards."
+    ],
+    "placeholders": ["event type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Locate purchase order templates for ___ supplies.",
+      "Used by ___ departments.",
+      "Following procurement procedures of ___."
+    ],
+    "placeholders": ["supply type", "department", "organization"]
+  },
+  {
+    "segments": [
+      "Search for IT troubleshooting logs documenting ___ issues.",
+      "Used by ___ technicians.",
+      "Following service desk protocols of ___."
+    ],
+    "placeholders": ["issue type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Find templates for knowledge transfer in ___ teams.",
+      "Used by ___ employees during transitions.",
+      "Following handover checklists of ___."
+    ],
+    "placeholders": ["team type", "employee type", "organization"]
+  },
+  {
+    "segments": [
+      "Locate press release templates for announcing ___ updates.",
+      "Used by ___ PR teams.",
+      "Following media communication guidelines."
+    ],
+    "placeholders": ["update type", "team type", "organization"]
+  },
+  {
+    "segments": [
+      "Show me risk mitigation templates for ___ operations.",
+      "Used by ___ strategy teams.",
+      "Based on mitigation policies of ___."
+    ],
+    "placeholders": ["operation type", "team type", "organization"]
+  },
+  {
+    "segments": [
+      "Find internal feedback templates to assess ___ initiatives.",
+      "Used by ___ management teams.",
+      "Aligned with continuous improvement frameworks."
+    ],
+    "placeholders": ["initiative type", "team type", "framework"]
+  },
+  {
+    "segments": [
+      "Locate maintenance approval templates for ___ repairs.",
+      "Approved by ___ supervisors.",
+      "Following repair authorization procedures."
+    ],
+    "placeholders": ["repair type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Search for form templates to document ___ product testing.",
+      "Used by ___ QA departments.",
+      "Following quality testing protocols."
+    ],
+    "placeholders": ["product type", "department", "organization"]
+  },
+  {
+    "segments": [
+      "Find templates for compliance summaries in ___ audits.",
+      "Prepared by ___ compliance teams.",
+      "Following audit frameworks under ___."
+    ],
+    "placeholders": ["audit type", "team type", "framework"]
+  },
+  {
+    "segments": [
+      "Locate team evaluation templates assessing ___ performance.",
+      "Used by ___ supervisors.",
+      "Following team development policies."
+    ],
+    "placeholders": ["performance area", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Show me onboarding checklist templates for ___ employees.",
+      "Used by ___ HR staff.",
+      "Compliant with hiring policies of ___."
+    ],
+    "placeholders": ["employee type", "staff role", "organization"]
+  },
+  {
+    "segments": [
+      "Find volunteer registration templates for ___ programs.",
+      "Used by ___ community organizations.",
+      "Following volunteer management policies."
+    ],
+    "placeholders": ["program type", "organization", "region"]
+  },
+  {
+    "segments": [
+      "Locate sustainability report templates about ___ initiatives.",
+      "Developed by ___ companies.",
+      "Aligned with environmental reporting standards."
+    ],
+    "placeholders": ["initiative type", "company type", "authority"]
+  },
+  {
+    "segments": [
+      "Search for maintenance budget templates for ___ facilities.",
+      "Prepared by ___ finance teams.",
+      "Approved under capital planning rules."
+    ],
+    "placeholders": ["facility type", "team type", "organization"]
+  },
+  {
+    "segments": [
+      "Find templates for policy violation reports in ___.",
+      "Used by ___ compliance officers.",
+      "Following disciplinary frameworks under ___."
+    ],
+    "placeholders": ["policy type", "officer type", "authority"]
+  },
+  {
+    "segments": [
+      "Locate annual performance report templates for ___ entities.",
+      "Compiled by ___ analysts.",
+      "Following annual review standards of ___."
+    ],
+    "placeholders": ["entity type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Show me strategic planning templates covering ___ goals.",
+      "Developed by ___ leadership teams.",
+      "Aligned with corporate vision statements."
+    ],
+    "placeholders": ["goal type", "team type", "organization"]
+  },
+  {
+    "segments": [
+      "Find templates for expense justification in ___ departments.",
+      "Used by ___ finance officers.",
+      "Following budget approval workflows."
+    ],
+    "placeholders": ["department type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Locate outreach program templates for ___ communities.",
+      "Developed by ___ organizations.",
+      "Following community engagement standards."
+    ],
+    "placeholders": ["community type", "organization", "region"]
+  },
+  {
+    "segments": [
+      "Search for templates documenting technical specifications of ___.",
+      "Created by ___ engineers.",
+      "Following product documentation standards."
+    ],
+    "placeholders": ["system type", "role type", "framework"]
+  },
+  {
+    "segments": [
+      "Find design approval templates for ___ creative projects.",
+      "Used by ___ designers or clients.",
+      "Following design review procedures."
+    ],
+    "placeholders": ["project type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Locate exit interview templates for ___ employees.",
+      "Conducted by ___ HR managers.",
+      "Following employee exit policies."
+    ],
+    "placeholders": ["employee level", "manager role", "organization"]
+  },
+  {
+    "segments": [
+      "Show me corrective action plan templates for ___ departments.",
+      "Used by ___ supervisors.",
+      "Following compliance improvement plans."
+    ],
+    "placeholders": ["department type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Find templates for vendor registration related to ___.",
+      "Used by ___ procurement offices.",
+      "Following supplier onboarding procedures."
+    ],
+    "placeholders": ["product category", "office type", "region"]
+  },
+  {
+    "segments": [
+      "Locate documentation templates for system deployment in ___.",
+      "Used by ___ IT teams.",
+      "Following deployment methodologies."
+    ],
+    "placeholders": ["system type", "team type", "framework"]
+  },
+  {
+    "segments": [
+      "Search for templates describing data migration for ___.",
+      "Prepared by ___ database administrators.",
+      "Following migration policies."
+    ],
+    "placeholders": ["platform type", "admin type", "organization"]
+  },
+  {
+    "segments": [
+      "Find templates to record marketing budgets for ___ campaigns.",
+      "Used by ___ marketers.",
+      "Following spending control policies."
+    ],
+    "placeholders": ["campaign type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Locate grant report templates summarizing ___ results.",
+      "Submitted by ___ researchers.",
+      "Following funding body requirements."
+    ],
+    "placeholders": ["research type", "researcher type", "authority"]
+  },
+  {
+    "segments": [
+      "Show me performance review templates for ___ departments.",
+      "Completed by ___ managers.",
+      "Following organizational review cycles."
+    ],
+    "placeholders": ["department type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Find templates for monthly status updates on ___ initiatives.",
+      "Used by ___ project managers.",
+      "Following reporting protocols."
+    ],
+    "placeholders": ["initiative type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Locate project kickoff templates for ___ programs.",
+      "Prepared by ___ coordinators.",
+      "Following initiation methodologies."
+    ],
+    "placeholders": ["program type", "role type", "framework"]
+  },
+  {
+    "segments": [
+      "Search for templates documenting service level agreements for ___.",
+      "Used by ___ service providers.",
+      "Complying with SLA requirements."
+    ],
+    "placeholders": ["service type", "provider type", "organization"]
+  },
+  {
+    "segments": [
+      "Find templates for quarterly review reports in ___ teams.",
+      "Used by ___ supervisors.",
+      "Following quarterly reporting structures."
+    ],
+    "placeholders": ["team type", "role type", "organization"]
+  },
+  {
+    "segments": [
+      "Locate templates for supplier feedback on ___ contracts.",
+      "Completed by ___ procurement managers.",
+      "Following supplier relationship guidelines."
+    ],
+    "placeholders": ["contract type", "manager role", "organization"]
+  },
+  {
+    "segments": [
+      "Show me compliance policy drafts regulating ___ operations.",
+      "Created by ___ compliance units.",
+      "Following government requirements."
+    ],
+    "placeholders": ["operation type", "unit type", "authority"]
+  },
+  {
+    "segments": [
+      "Find templates for warehouse management in ___ industries.",
+      "Used by ___ logistics teams.",
+      "Following stock control rules."
+    ],
+    "placeholders": ["industry type", "team type", "organization"]
+  },
+  {
+    "segments": [
+      "Locate templates for expense forecasting of ___ initiatives.",
+      "Prepared by ___ financial planners.",
+      "Following predictive analysis standards."
+    ],
+    "placeholders": ["initiative type", "role type", "framework"]
+  },
+  {
+    "segments": [
+      "Search for templates describing recruitment policies for ___.",
+      "Developed by ___ HR divisions.",
+      "Following hiring legislation."
+    ],
+    "placeholders": ["position type", "division type", "region"]
+  }
+]

@@ -1,0 +1,170 @@
+{
+  "industries": {
+    "it": ["it", "tech", "technology", "software", "cyber", "digital"],
+    "healthcare": ["healthcare", "medical", "hospital", "clinical", "health"],
+    "finance": ["finance", "banking", "financial", "investment"],
+    "manufacturing": ["manufacturing", "production", "factory"],
+    "retail": ["retail", "e-commerce", "sales", "commerce"],
+    "legal": ["legal", "law", "attorney", "court"],
+    "hr": ["hr", "human resources", "personnel", "employee"]
+  },
+  "regions": {
+    "US": ["us", "usa", "united states", "america", "american"],
+    "EU": ["eu", "europe", "european"],
+    "UK": ["uk", "britain", "united kingdom", "british"],
+    "California": ["california"],
+    "Asia": ["asia", "asian", "apac"]
+  },
+  "doc_types": {
+    "template": ["template", "form", "format"],
+    "checklist": ["checklist", "check list"],
+    "policy": ["policy", "policies"],
+    "procedure": ["procedure", "process", "workflow"],
+    "report": ["report", "analysis"],
+    "guide": ["guide", "manual", "handbook"],
+    "declaration": ["declaration", "certify", "certification"]
+  },
+  "topics": {
+    "compliance": ["compliance", "compliant", "regulation"],
+    "audit": ["audit", "auditing", "inspection"],
+    "gdpr": ["gdpr", "data protection", "privacy"],
+    "iso": ["iso", "international standard"],
+    "nist": ["nist"],
+    "hipaa": ["hipaa"],
+    "tax": ["tax", "taxation", "irs", "filing"],
+    "security": ["security", "cybersecurity", "infosec"]
+  },
+  "relationships": {
+    "industry": {
+      "it": ["finance", "healthcare", "software vendors", "cloud providers", "SaaS companies"],
+      "finance": ["it", "legal", "banking", "insurance", "fintech"],
+      "healthcare": ["legal", "pharmaceutical", "biotech", "medical devices"],
+      "manufacturing": ["logistics", "supply chain", "automotive"],
+      "retail": ["e-commerce", "logistics", "consumer goods"]
+    },
+    "region": {
+      "US": ["EU", "international", "Canada", "UK"],
+      "EU": ["US", "UK", "GDPR regions"],
+      "UK": ["EU", "US", "Commonwealth"]
+    },
+    "topic": {
+      "compliance": ["audit", "certification", "risk assessment", "governance"],
+      "security": ["penetration testing", "vulnerability assessment", "incident response"],
+      "tax": ["accounting", "payroll", "deductions"],
+      "audit": ["internal controls", "risk management", "remediation"]
+    }
+  },
+  "query_pools": {
+    "industry_it": [
+      "Add examples from enterprise software companies.",
+      "Include templates used by cloud service providers.",
+      "Show documentation for DevOps teams.",
+      "Add samples from Fortune 500 tech companies.",
+      "Include startup-friendly versions.",
+      "Show templates for remote IT teams.",
+      "Add vendor management documentation.",
+      "Include API documentation templates."
+    ],
+    "industry_finance": [
+      "Add examples from investment banks.",
+      "Include templates for fintech startups.",
+      "Show regulatory filings for public companies.",
+      "Add risk assessment documentation.",
+      "Include anti-money laundering templates."
+    ],
+    "industry_healthcare": [
+      "Add HIPAA-compliant versions.",
+      "Include patient data handling guides.",
+      "Show clinical trial documentation.",
+      "Add medical device compliance forms."
+    ],
+    "topic_compliance": [
+      "Include third-party audit checklists.",
+      "Add vendor compliance questionnaires.",
+      "Show gap analysis templates.",
+      "Include remediation plan examples.",
+      "Add compliance training materials.",
+      "Show executive summary templates.",
+      "Include risk register samples.",
+      "Add control mapping documentation."
+    ],
+    "topic_security": [
+      "Add incident response playbooks.",
+      "Include penetration testing reports.",
+      "Show security policy templates.",
+      "Add access control documentation.",
+      "Include threat assessment guides.",
+      "Show security awareness training."
+    ],
+    "topic_audit": [
+      "Add internal audit checklists.",
+      "Include finding report templates.",
+      "Show corrective action plans.",
+      "Add audit trail documentation.",
+      "Include management response templates."
+    ],
+    "region_US": [
+      "Include state-specific variations.",
+      "Add federal agency requirements.",
+      "Show multi-state compliance guides.",
+      "Include SEC filing templates.",
+      "Add IRS-approved formats."
+    ],
+    "region_EU": [
+      "Include GDPR-specific templates.",
+      "Add multi-language versions.",
+      "Show cross-border compliance guides.",
+      "Include local authority formats."
+    ],
+    "type_template": [
+      "Show pre-filled example versions.",
+      "Include instruction sheets.",
+      "Add validation checklists.",
+      "Show version comparison guides.",
+      "Include approval workflow templates."
+    ],
+    "type_declaration": [
+      "Add attestation letter samples.",
+      "Include witness signature forms.",
+      "Show notarization requirements.",
+      "Add legal disclaimer templates."
+    ],
+    "general": [
+      "Include video tutorial links.",
+      "Add FAQ documentation.",
+      "Show common mistakes to avoid.",
+      "Include glossary of terms.",
+      "Add related form cross-references.",
+      "Show processing time estimates.",
+      "Include contact information for support.",
+      "Add sample completed submissions.",
+      "Show deadline calendars.",
+      "Include fee schedules."
+    ]
+  },
+  "temporal_options": [
+    "Show only documents updated this year.",
+    "Include latest regulatory amendments.",
+    "Add recent industry changes.",
+    "Filter for current fiscal year."
+  ],
+  "practical_options": [
+    "Add real-world case studies.",
+    "Include lessons learned documentation.",
+    "Show before/after comparison examples.",
+    "Add success metrics and KPIs.",
+    "Include common pitfalls to avoid."
+  ],
+  "xref_options": [
+    "Show related supporting documents.",
+    "Include prerequisite forms.",
+    "Add follow-up action items.",
+    "Show dependent workflow steps."
+  ],
+  "mentioned_concepts": {
+    "standards": ["iso 27001", "iso", "nist", "gdpr", "hipaa", "sox", "pci", "soc 2"],
+    "features": ["editable", "fillable", "step-by-step", "guide", "checklist", "example", "sample", "template", "pdf", "word", "excel"],
+    "actions": ["include", "add", "show", "focus", "filter", "compare"]
+  }
+}
+
