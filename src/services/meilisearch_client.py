@@ -46,6 +46,18 @@ class MeilisearchClient:
         settings_data = index.get_settings()
         return settings_data.get("embedders", {})
 
+    def get_task(self, task_uid: int) -> Dict[str, Any]:
+        task = self.client.get_task(task_uid)
+        return {
+            "uid": task.uid,
+            "status": task.status,
+            "type": task.type,
+            "started_at": str(task.started_at) if task.started_at else None,
+            "finished_at": str(task.finished_at) if task.finished_at else None,
+            "duration": task.duration,
+            "error": task.error if hasattr(task, 'error') else None
+        }
+
     def search(
         self,
         query: str,
@@ -58,10 +70,8 @@ class MeilisearchClient:
         search_params = {
             "limit": limit,
             "attributesToRetrieve": [
-                "id", "title", "subTitle", "description", 
-                "slug", "domain", "faqCountry", "faqState",
-                "primaryFormTypeFilterCategory"
-            ]
+                "id", "title", "totalUsed", "internalNotes"
+            ],
         }
         
         if filters:
@@ -100,9 +110,7 @@ class MeilisearchClient:
         search_params = {
             "limit": limit,
             "attributesToRetrieve": [
-                "id", "title", "subTitle", "description",
-                "slug", "domain", "faqCountry", "faqState",
-                "primaryFormTypeFilterCategory"
+                "id", "title", "totalUsed", "internalNotes"
             ],
             "hybrid": {
                 "embedder": self.embedder_name,

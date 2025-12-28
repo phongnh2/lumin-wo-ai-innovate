@@ -50,7 +50,7 @@ async def ingest_pdfs(files: List[UploadFile] = File(...)):
     )
 
 
-@router.get("/prompts", response_model=PromptResponse)
+@router.post("/prompts", response_model=PromptResponse)
 async def generate_prompts():
     context = vector_store.get_context_summary()
     
@@ -134,5 +134,14 @@ async def get_embedder_status():
     try:
         status = meilisearch_client.get_embedder_status()
         return {"embedders": status, "configured": len(status) > 0}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/embedder/task/{task_uid}")
+async def check_task_status(task_uid: int):
+    try:
+        task = meilisearch_client.get_task(task_uid)
+        return task
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

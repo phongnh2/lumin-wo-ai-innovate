@@ -45,6 +45,9 @@ setup-embedder:
 embedder-status:
     curl -s "http://localhost:8765/api/v1/embedder/status" | python -m json.tool
 
+embedder-task task_uid:
+    curl -s "http://localhost:8765/api/v1/embedder/task/{{task_uid}}" | python -m json.tool
+
 search query:
     curl -s -X POST "http://localhost:8765/api/v1/search" \
         -H "Content-Type: application/json" \
