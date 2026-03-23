@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from src.api.routes import router
+from src.api.routes import router, router_v2
 from src.config.settings import settings
 
 app = FastAPI(
@@ -20,6 +20,7 @@ app.add_middleware(
 )
 
 app.include_router(router, prefix="/api/v1")
+app.include_router(router_v2, prefix="/api/v2")
 
 
 @app.get("/health")

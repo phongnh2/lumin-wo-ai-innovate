@@ -11,17 +11,33 @@ An AI-powered system that analyzes PDF documents, generates intelligent prompt t
 
 ## Quick Start
 
-### Using Docker (Recommended)
+### Using Docker (full stack)
 
 ```bash
-docker-compose up --build
+docker compose up --build
+```
+
+### Meilisearch only (local API via `just run`)
+
+```bash
+docker compose up -d meilisearch
+```
+
+Meilisearch listens on `http://localhost:7700`. The app uses `MEILISEARCH_HOST` (default `http://localhost:7700`).
+
+Other Docker commands:
+
+```bash
+docker compose build
+docker compose logs -f
+docker compose down
 ```
 
 ### Manual Setup
 
 ```bash
-just setup
-just dev
+just install
+just run
 ```
 
 The API will be available at `http://localhost:8765`
@@ -38,7 +54,7 @@ curl -X POST "http://localhost:8765/api/v1/ingest" \
   -F "files=@document2.pdf"
 ```
 
-### 2. Generate Prompt Templates
+### 2. Generate Prompt Templates (requires ingest)
 
 **GET** `/api/v1/prompts`
 
@@ -81,6 +97,37 @@ Response:
     "Add examples from enterprise software companies.",
     "Include third-party audit checklists.",
     "Show only documents updated this year."
+  ]
+}
+```
+
+### 3.5 Generate Prompt Templates with Claude (no ingest)
+
+**POST** `/api/v2/prompts`
+
+Skips Chroma ingest entirely. Uses Claude (`ANTHROPIC_API_KEY`) to generate natural search-style prompts. At least one of `query` or `context` is required.
+
+```bash
+curl -X POST "http://localhost:8765/api/v2/prompts" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "I need prompts for compliance forms in healthcare", "count": 3}'
+```
+
+With context (skill / rule text):
+
+```bash
+curl -X POST "http://localhost:8765/api/v2/prompts" \
+  -H "Content-Type: application/json" \
+  -d '{"context": "Generate search prompts for document and form templates", "count": 3}'
+```
+
+Response:
+```json
+{
+  "prompt": [
+    "Find a healthcare compliance form for ___",
+    "Show policy templates related to ___ in hospitals",
+    "Give me required regulatory documents for ___"
   ]
 }
 ```
@@ -152,14 +199,52 @@ curl "http://localhost:8765/health"
 ## Just Commands
 
 ```bash
-just setup           # Setup Python environment
-just dev             # Run development server
-just test-ingest     # Upload all PDFs from sample-pdf/
-just test-prompts    # Generate prompt templates
-just setup-embedder  # Configure Meilisearch embedder
-just embedder-status # Check embedder configuration
-just search "query"  # Hybrid search
-just search-semantic "query"  # Semantic search only
+just install   # Python venv + dependencies (mise + pip)
+just run       # Start the API (start Meilisearch first if not using Docker for the full stack)
+```
+
+### Shell helpers (copy-paste)
+
+Upload all PDFs from `sample-pdf/`:
+
+```bash
+for f in sample-pdf/*.pdf; do
+  echo "Uploading: $f"
+  curl -X POST "http://localhost:8765/api/v1/ingest" -F "files=@$f"
+  echo ""
+done
+```
+
+Health:
+
+```bash
+curl "http://localhost:8765/health"
+```
+
+Prompts:
+
+```bash
+curl -s "http://localhost:8765/api/v1/prompts" | python -m json.tool
+```
+
+Embedder (setup / status / task):
+
+```bash
+curl -s -X POST "http://localhost:8765/api/v1/embedder/setup" | python -m json.tool
+curl -s "http://localhost:8765/api/v1/embedder/status" | python -m json.tool
+curl -s "http://localhost:8765/api/v1/embedder/task/<TASK_UID>" | python -m json.tool
+```
+
+Search:
+
+```bash
+curl -s -X POST "http://localhost:8765/api/v1/search" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "your query", "use_hybrid": true, "limit": 5}' | python -m json.tool
+
+curl -s -X POST "http://localhost:8765/api/v1/search/semantic" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "your query", "limit": 5}' | python -m json.tool
 ```
 
 ## Project Structure
@@ -179,6 +264,7 @@ just search-semantic "query"  # Semantic search only
 │   │   ├── vector_store.py
 │   │   ├── prompt_generator.py
 │   │   ├── followup_generator.py
+│   │   ├── claude_prompt_generator.py
 │   │   └── meilisearch_client.py
 │   ├── models/
 │   │   └── schemas.py
@@ -210,6 +296,8 @@ just search-semantic "query"  # Semantic search only
 | `MEILISEARCH_HOST` | `http://localhost:7700` | Meilisearch URL |
 | `MEILISEARCH_API_KEY` | `` | Meilisearch API key (optional) |
 | `MEILISEARCH_INDEX` | `form` | Meilisearch index name |
+| `ANTHROPIC_API_KEY` | `` | Claude API key for `/api/v2/prompts` |
+| `ANTHROPIC_MODEL` | `claude-3-5-haiku-latest` | Claude model for `/api/v2/prompts` |
 
 ## License
 

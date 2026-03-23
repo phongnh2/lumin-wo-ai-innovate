@@ -9,6 +9,8 @@ class Settings(BaseSettings):
     meilisearch_host: str = "http://localhost:7700"
     meilisearch_api_key: str = ""
     meilisearch_index: str = "form"
+    anthropic_api_key: str = ""
+    anthropic_model: str = "claude-3-5-haiku-latest"
 
     class Config:
         env_file = ".env"

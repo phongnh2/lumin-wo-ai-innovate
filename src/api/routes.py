@@ -5,6 +5,7 @@ from src.services.vector_store import VectorStore
 from src.services.prompt_generator import PromptGenerator
 from src.services.followup_generator import FollowUpGenerator
 from src.services.meilisearch_client import MeilisearchClient
+from src.services.claude_prompt_generator import ClaudePromptGenerator
 from src.models.schemas import (
     IngestResponse, 
     PromptResponse,
@@ -12,15 +13,19 @@ from src.models.schemas import (
     SearchResponse,
     EmbedderSetupResponse,
     FollowUpRequest,
-    FollowUpResponse
+    FollowUpResponse,
+    V2PromptRequest,
+    V2PromptResponse,
 )
 
 router = APIRouter()
+router_v2 = APIRouter()
 pdf_processor = PDFProcessor()
 vector_store = VectorStore()
 prompt_generator = PromptGenerator()
 followup_generator = FollowUpGenerator()
 meilisearch_client = MeilisearchClient()
+claude_prompt_generator = None
 
 
 @router.post("/ingest", response_model=IngestResponse)
@@ -67,6 +72,25 @@ async def generate_prompts():
         placeholders=result["placeholders"],
         context_summary=context[:500]
     )
+
+
+@router_v2.post("/prompts", response_model=V2PromptResponse)
+async def generate_prompts_v2(request: V2PromptRequest):
+    global claude_prompt_generator
+
+    try:
+        if claude_prompt_generator is None:
+            claude_prompt_generator = ClaudePromptGenerator()
+        prompts = claude_prompt_generator.generate(
+            query=request.query,
+            context=request.context,
+            count=request.count,
+        )
+        return V2PromptResponse(prompt=prompts)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @router.post("/prompts/follow-up", response_model=FollowUpResponse)
