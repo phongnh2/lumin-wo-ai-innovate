@@ -62,13 +62,14 @@ class MeilisearchClient:
         self,
         query: str,
         use_hybrid: bool = True,
-        limit: int = 10,
+        limit: int = 20,
         filters: Optional[str] = None
     ) -> Dict[str, Any]:
         index = self.get_index()
         
         search_params = {
             "limit": limit,
+            "matchingStrategy": "last",
             "attributesToRetrieve": [
                 "id", "title", "totalUsed", "internalNotes"
             ],

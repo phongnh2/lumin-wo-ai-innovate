@@ -18,9 +18,11 @@ async def lifespan(app: FastAPI):
     # This is a fire-and-forget task (Meilisearch processes it async).
     try:
         from src.services.template_search import TemplateSearchService
-        TemplateSearchService().configure_index()
+        svc = TemplateSearchService()
+        svc.configure_index()
+        svc.setup_embedder_if_needed()
     except Exception as e:
-        logger.warning("Meilisearch index configuration skipped: %s", e)
+        logger.warning("Meilisearch setup skipped: %s", e)
     yield
 
 

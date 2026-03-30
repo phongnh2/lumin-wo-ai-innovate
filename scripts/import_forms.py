@@ -200,10 +200,7 @@ def configure_index(index: meilisearch.index.Index, client: meilisearch.Client) 
 
 
 def filter_form(form: dict) -> bool:
-    if not form.get("publishedDate"):
-        return False
-    total_used = (form.get("amountUsed") or 0) + (form.get("initUsed") or 0)
-    return total_used > 100
+    return bool(form.get("publishedDate"))
 
 
 def load_and_filter(data_path: str) -> list:
@@ -215,7 +212,7 @@ def load_and_filter(data_path: str) -> list:
 
     filtered = [form for form in all_forms if filter_form(form)]
 
-    print(f"Filtered to {len(filtered)} records (publishedDate set + amountUsed+initUsed > 100)")
+    print(f"Filtered to {len(filtered)} records (publishedDate set)")
     return filtered
 
 

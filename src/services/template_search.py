@@ -2,6 +2,7 @@ import logging
 from typing import Any, Dict, List, Optional
 
 import meilisearch
+import requests
 
 from src.config.settings import settings
 
@@ -19,6 +20,9 @@ CARD_ATTRIBUTES = [
 SEARCH_HIT_ATTRIBUTES = [
     "id", "title", "slug", "searchTerms", "categories",
 ]
+
+EMBEDDER_NAME = "form-embedder"
+EMBEDDER_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
 FILTERABLE_ATTRIBUTES = [
     "domain", "language", "outdated", "eSignCompatible", "accessible",
@@ -64,6 +68,41 @@ class TemplateSearchService:
             logger.info("Meilisearch index settings update submitted.")
         except Exception as e:
             logger.warning("Could not update Meilisearch index settings: %s", e)
+
+    def setup_embedder_if_needed(self) -> None:
+        """Enable vectorStore feature + register HuggingFace embedder if not already done."""
+        try:
+            headers = {"Content-Type": "application/json"}
+            if settings.meilisearch_api_key:
+                headers["Authorization"] = f"Bearer {settings.meilisearch_api_key}"
+
+            resp = requests.patch(
+                f"{settings.meilisearch_host}/experimental-features",
+                json={"vectorStore": True},
+                headers=headers,
+                timeout=5,
+            )
+            if resp.status_code not in (200, 202):
+                logger.warning("vectorStore enable returned %s: %s", resp.status_code, resp.text)
+
+            index = self.get_index()
+            existing = index.get_settings().get("embedders", {})
+            if EMBEDDER_NAME not in existing:
+                index.update_embedders({
+                    EMBEDDER_NAME: {
+                        "source": "huggingFace",
+                        "model": EMBEDDER_MODEL,
+                        "documentTemplate": (
+                            "A form template titled '{{doc.title}}'. "
+                            "{{doc.description}} {{doc.subTitle}}"
+                        ),
+                    }
+                })
+                logger.info("Embedder '%s' registration submitted.", EMBEDDER_NAME)
+            else:
+                logger.info("Embedder '%s' already configured.", EMBEDDER_NAME)
+        except Exception as e:
+            logger.warning("Embedder setup skipped: %s", e)
 
     def _do_search(self, query: str, params: Dict[str, Any]) -> Dict[str, Any]:
         index = self.get_index()

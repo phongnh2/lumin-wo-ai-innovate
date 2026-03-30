@@ -12,5 +12,6 @@ numpy<2.0
 meilisearch==0.31.0
 anthropic
 httpx
+requests
 
 
