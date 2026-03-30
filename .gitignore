@@ -52,3 +52,4 @@ huggingface/
 
 sample-pdf/*
 !sample-pdf/.gitkeep
+data/production-form.json

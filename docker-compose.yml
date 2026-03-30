@@ -7,23 +7,43 @@ services:
       - meilisearch_data:/meili_data
     environment:
       - MEILI_ENV=development
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:7700/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
     restart: unless-stopped
 
-  pdf-prompt-agent:
+  meili-init:
     build: .
-    ports:
-      - "8765:8765"
     volumes:
       - ./data:/app/data
-      - ./sample-pdf:/app/sample-pdf
     environment:
-      - HOST=0.0.0.0
-      - PORT=8765
-      - CHROMA_PATH=/app/data/chroma_db
       - MEILISEARCH_HOST=http://meilisearch:7700
+      - MEILISEARCH_INDEX=form
     depends_on:
-      - meilisearch
-    restart: unless-stopped
+      meilisearch:
+        condition: service_healthy
+    command: >
+      sh -c "python scripts/import_forms.py && python scripts/setup_embedder.py"
+    restart: "no"
+
+  # pdf-prompt-agent:
+  #   build: .
+  #   ports:
+  #     - "8765:8765"
+  #   volumes:
+  #     - ./data:/app/data
+  #     - ./sample-pdf:/app/sample-pdf
+  #   environment:
+  #     - HOST=0.0.0.0
+  #     - PORT=8765
+  #     - CHROMA_PATH=/app/data/chroma_db
+  #     - MEILISEARCH_HOST=http://meilisearch:7700
+  #   depends_on:
+  #     - meilisearch
+  #   restart: unless-stopped
 
 volumes:
   meilisearch_data:
