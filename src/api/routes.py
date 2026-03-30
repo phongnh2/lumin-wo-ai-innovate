@@ -1,4 +1,7 @@
+import httpx
 from fastapi import APIRouter, UploadFile, File, HTTPException
+from fastapi.responses import Response
+from pydantic import BaseModel
 from typing import List
 from src.services.pdf_processor import PDFProcessor
 from src.services.vector_store import VectorStore
@@ -169,3 +172,28 @@ async def check_task_status(task_uid: int):
         return task
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+class PdfFetchRequest(BaseModel):
+    url: str
+    filename: str = "document.pdf"
+
+
+@router.post("/pdf/fetch")
+async def fetch_pdf(request: PdfFetchRequest):
+    """Server-side proxy to fetch a PDF from a remote URL, bypassing browser CORS."""
+    try:
+        async with httpx.AsyncClient(follow_redirects=True, timeout=30.0) as client:
+            resp = await client.get(request.url)
+            if resp.status_code != 200:
+                raise HTTPException(
+                    status_code=resp.status_code,
+                    detail=f"Failed to fetch PDF from remote URL: {resp.status_code}",
+                )
+        return Response(
+            content=resp.content,
+            media_type=resp.headers.get("content-type", "application/pdf"),
+            headers={"Content-Disposition": f'attachment; filename="{request.filename}"'},
+        )
+    except httpx.RequestError as e:
+        raise HTTPException(status_code=502, detail=f"Could not reach remote URL: {e}")

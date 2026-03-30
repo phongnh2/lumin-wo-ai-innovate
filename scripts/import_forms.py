@@ -3,8 +3,7 @@ Import filtered forms from production-form.json into Meilisearch.
 
 Filters:
   - publishedDate is not null/empty
-  - amountUsed + initUsed > 200
-  - max 1000 documents
+  - amountUsed + initUsed > 100
 
 Run:
   python scripts/import_forms.py
@@ -14,6 +13,7 @@ import json
 import os
 import sys
 import time
+from datetime import datetime
 
 import meilisearch
 
@@ -24,15 +24,82 @@ MEILISEARCH_INDEX = os.getenv("MEILISEARCH_INDEX", "form")
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "production-form.json")
 
 BATCH_SIZE = 100
-MAX_DOCS = 1000
 TASK_TIMEOUT_S = 120
 
 
-def build_document(form: dict) -> dict:
-    thumbnails = form.get("thumbnails") or []
+def build_category_lookup(all_forms: list) -> dict:
+    """Build a map of category_id -> {id, name, slug} from all forms."""
+    lookup = {}
+    for form in all_forms:
+        for cat in form.get("categories") or []:
+            cat_id = cat.get("id")
+            if cat_id and cat_id not in lookup:
+                lookup[cat_id] = {
+                    "id": cat_id,
+                    "name": cat.get("name", ""),
+                    "slug": cat.get("slug", ""),
+                }
+    return lookup
+
+
+def build_category(cat: dict, lookup: dict) -> dict:
+    parent_id = cat.get("parent")
+    parent = None
+    if parent_id and isinstance(parent_id, int):
+        parent = lookup.get(parent_id, {"id": parent_id, "name": "", "slug": ""})
+    return {
+        "id": cat.get("id"),
+        "name": cat.get("name", ""),
+        "slug": cat.get("slug", ""),
+        "parent": parent,
+    }
+
+
+def to_array(val) -> list:
+    if not val:
+        return []
+    if isinstance(val, list):
+        return val
+    return [val]
+
+
+def parse_published_date_timestamp(date_str) -> int:
+    if not date_str:
+        return 0
+    try:
+        dt = datetime.strptime(date_str[:10], "%Y-%m-%d")
+        return int(dt.timestamp())
+    except (ValueError, TypeError):
+        return 0
+
+
+def build_document(form: dict, category_lookup: dict) -> dict:
+    thumbnails_raw = form.get("thumbnails") or []
+    thumbnails = [
+        {"url": t.get("url", ""), "alt": t.get("alternativeText")}
+        for t in thumbnails_raw
+    ]
+
+    file_obj = form.get("file") or {}
+    file_data = (
+        {
+            "id": file_obj.get("id"),
+            "name": file_obj.get("name", ""),
+            "url": file_obj.get("url", ""),
+            "ext": file_obj.get("ext", ""),
+            "mime": file_obj.get("mime", ""),
+            "size": file_obj.get("size", 0),
+        }
+        if file_obj
+        else None
+    )
+
+    categories_raw = form.get("categories") or []
+    categories = [build_category(c, category_lookup) for c in categories_raw]
+
+    total_used = (form.get("amountUsed") or 0) + (form.get("initUsed") or 0)
     thumbnail_url = thumbnails[0]["url"] if thumbnails else None
-    file_obj = form.get("file")
-    file_url = file_obj["url"] if file_obj else None
+    file_url = file_data["url"] if file_data else None
 
     return {
         "id": form["id"],
@@ -46,33 +113,36 @@ def build_document(form: dict) -> dict:
         "domain": form.get("domain", ""),
         "language": form.get("language", ""),
         "publishedDate": form.get("publishedDate"),
+        "publishedDateTimestamp": parse_published_date_timestamp(form.get("publishedDate")),
+        "publishedAt": form.get("publishedAt"),
         "ranking": form.get("ranking", 0),
-        "templateReleaseId": form.get("templateReleaseId", ""),
-        "faqCountry": form.get("faqCountry", ""),
-        "faqState": form.get("faqState", ""),
-        "countryCode": form.get("countryCode", ""),
-        "stateCode": form.get("stateCode", ""),
-        "faqPublisher": form.get("faqPublisher", ""),
-        "faqSummary": form.get("faqSummary", ""),
-        "faqWhoNeedsToFill": form.get("faqWhoNeedsToFill", ""),
-        "faqWhereToSubmit": form.get("faqWhereToSubmit", ""),
-        "categories": [c["name"] for c in form.get("categories", []) if c.get("name")],
+        "countryCode": to_array(form.get("countryCode")),
+        "stateCode": to_array(form.get("stateCode")),
+        "categories": categories,
+        "formTypes": [],
+        "searchTerms": form.get("searchTerms") or [],
+        "relatedFormByDomain": form.get("relatedFormByDomain") or [],
         "amountUsed": form.get("amountUsed", 0),
         "initUsed": form.get("initUsed", 0),
-        "totalUsed": (form.get("amountUsed") or 0) + (form.get("initUsed") or 0),
-        "thumbnailUrl": thumbnail_url,
-        "fileUrl": file_url,
+        "totalUsed": total_used,
+        "thumbnails": thumbnails,
+        "file": file_data,
         "pdfUrl": form.get("pdfUrl"),
         "eSignCompatible": form.get("eSignCompatible", False),
         "accessible": form.get("accessible", False),
         "outdated": form.get("outdated", False),
-        "publish": form.get("publish", False),
-        "internalNotes": json.dumps({
-            "thumbnail": thumbnail_url,
-            "file": file_url,
-        }),
-        "publishedAt": form.get("publishedAt"),
+        "legalReview": form.get("legalReview"),
+        "faqCountry": form.get("faqCountry", ""),
+        "faqState": form.get("faqState", ""),
+        "faqPublisher": form.get("faqPublisher", ""),
+        "faqSummary": form.get("faqSummary", ""),
+        "faqWhoNeedsToFill": form.get("faqWhoNeedsToFill", ""),
+        "faqWhereToSubmit": form.get("faqWhereToSubmit", ""),
         "writerName": form.get("writerName"),
+        "bioLink": form.get("bioLink"),
+        "role": form.get("role"),
+        "longFormContent": form.get("longFormContent"),
+        "internalNotes": json.dumps({"thumbnail": thumbnail_url, "file": file_url}),
     }
 
 
@@ -108,19 +178,21 @@ def configure_index(index: meilisearch.index.Index, client: meilisearch.Client) 
     task = index.update_searchable_attributes([
         "title", "subTitle", "description", "metaTitle", "metaDescription",
         "metaKeywords", "faqSummary", "faqPublisher", "faqWhoNeedsToFill",
-        "faqWhereToSubmit", "categories", "slug", "domain",
+        "faqWhereToSubmit", "searchTerms", "slug", "domain",
     ])
     wait_for_task(client, task.task_uid)
 
     task = index.update_filterable_attributes([
-        "language", "countryCode", "stateCode", "eSignCompatible",
-        "accessible", "outdated", "publish", "publishedDate", "totalUsed",
-        "amountUsed", "initUsed", "ranking", "categories",
+        "domain", "language", "outdated", "eSignCompatible", "accessible",
+        "legalReview", "publishedDateTimestamp", "publishedDate", "totalUsed",
+        "amountUsed", "initUsed", "ranking", "countryCode", "stateCode",
+        "categories.id", "categories.slug", "categories.name",
     ])
     wait_for_task(client, task.task_uid)
 
     task = index.update_sortable_attributes([
-        "ranking", "totalUsed", "publishedDate", "amountUsed",
+        "ranking", "totalUsed", "publishedDate", "publishedDateTimestamp",
+        "amountUsed", "outdated", "title",
     ])
     wait_for_task(client, task.task_uid)
 
@@ -134,21 +206,16 @@ def filter_form(form: dict) -> bool:
     return total_used > 100
 
 
-def load_and_filter(data_path: str) -> list[dict]:
+def load_and_filter(data_path: str) -> list:
     print(f"Loading JSON from {data_path} ...")
     with open(data_path, "r", encoding="utf-8") as f:
         all_forms = json.load(f)
 
     print(f"Total records in file: {len(all_forms)}")
 
-    filtered = []
-    for form in all_forms:
-        if filter_form(form):
-            filtered.append(form)
-            if len(filtered) >= MAX_DOCS:
-                break
+    filtered = [form for form in all_forms if filter_form(form)]
 
-    print(f"Filtered to {len(filtered)} records (publishedDate set + amountUsed+initUsed > 100, max {MAX_DOCS})")
+    print(f"Filtered to {len(filtered)} records (publishedDate set + amountUsed+initUsed > 100)")
     return filtered
 
 
@@ -168,8 +235,9 @@ def main() -> None:
     index = ensure_index(client)
     configure_index(index, client)
 
-    forms = load_and_filter(DATA_PATH)
-    documents = [build_document(f) for f in forms]
+    all_forms = load_and_filter(DATA_PATH)
+    category_lookup = build_category_lookup(all_forms)
+    documents = [build_document(f, category_lookup) for f in all_forms]
 
     total = len(documents)
     imported = 0

@@ -1,13 +1,34 @@
+import logging
+from contextlib import asynccontextmanager
+
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
 from src.api.routes import router, router_v2
+from src.api.template_routes import router as template_router
 from src.config.settings import settings
+
+logger = logging.getLogger(__name__)
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Push updated filterable/sortable settings to Meilisearch on every startup.
+    # This is a fire-and-forget task (Meilisearch processes it async).
+    try:
+        from src.services.template_search import TemplateSearchService
+        TemplateSearchService().configure_index()
+    except Exception as e:
+        logger.warning("Meilisearch index configuration skipped: %s", e)
+    yield
+
 
 app = FastAPI(
     title="PDF Prompt Agent",
     description="AI-powered prompt template generator based on PDF content",
-    version="1.0.0"
+    version="1.0.0",
+    lifespan=lifespan,
 )
 
 # Allow all CORS
@@ -21,6 +42,7 @@ app.add_middleware(
 
 app.include_router(router, prefix="/api/v1")
 app.include_router(router_v2, prefix="/api/v2")
+app.include_router(template_router, prefix="/form-templates/api")
 
 
 @app.get("/health")
@@ -33,6 +55,5 @@ if __name__ == "__main__":
         "src.main:app",
         host=settings.host,
         port=settings.port,
-        reload=settings.debug
+        reload=settings.debug,
     )
-
